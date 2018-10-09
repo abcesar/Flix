@@ -9,6 +9,7 @@
 import UIKit
 
 class MovieCell: UITableViewCell {
+    var movie: Movie!
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -26,5 +27,7 @@ class MovieCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
 
 }
