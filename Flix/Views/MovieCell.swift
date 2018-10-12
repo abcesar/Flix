@@ -9,7 +9,16 @@
 import UIKit
 
 class MovieCell: UITableViewCell {
-    var movie: Movie!
+    var movie: Movie!{
+        didSet{
+            titleLabel.text = movie.title
+            overviewLabel.text = movie.overview
+            
+            let baseURLString = "https//image.tmdb.org/t/p.w500"
+            let posterPathURL = URL(string: baseURLString + movie.posterPathString)!
+            posterImageView.af_setImage(withURL: posterPathURL)
+        }
+    }
     
     @IBOutlet weak var titleLabel: UILabel!
     
